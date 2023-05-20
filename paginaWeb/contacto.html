@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<title> Página de contacto </title>
+</head>
+
+<body>
+	<header>
+		<img src="./iconos/logo.jpg" width="100" height="100">
+	</header>
+
+	<nav>
+		<p><a href="./index.html"> Principal</a> | <a href="./personal.html"> Personal</a> | <a href="./profesional.html">
+				Profesional</a> | Contacto</p>
+	</nav>
+
+	<h1> Página de contacto</h1>
+	<form action="procesar.php" method="get">
+		<fieldset>
+			<legend> Datos personales </legend>
+			<p><label>Nombre: <input type="text" name="nombre" placeholder="Introduzca su nombre completo."
+						required></label></p>
+			<p><label>Email: <input type="email" name="email"
+						placeholder="Introduzca su email para ponernos en contacto con usted." required></label></p>
+		</fieldset>
+
+		<fieldset>
+			<legend> Consulta </legend>
+			<textarea name="consulta" placeholder="¿Cuál es la razón de la consulta?" cols="30" rows="10"
+				required> </textarea>
+		</fieldset>
+
+
+		<input type="submit" name="enviar" value="Enviar">
+		<input type="reset" name="resetear" value="Limpiar campos">
+	</form>
+
+	<footer>
+		<h2>Redes Sociales</h2>
+		<a href="https://twitter.com/carlotiii_30"> <img src="./iconos/twitter.png" width="30" height="30"></a>
+		<a href="https://www.instagram.com/carlotaadelavega_/"> <img src="./iconos/Instagram.png" width="30"
+				height="30"></a>
+		<a href="https://www.tiktok.com/@carlotiii_30"> <img src="./iconos/tiktok.png" width="30" height="30"></a>
+	</footer>
+
+</body>
+
+</html>

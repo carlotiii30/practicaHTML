@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title> Creacion de formularios </title>
+	</head>
+
+    <body>
+        <!- Formulario 1. Campos de texto ->
+
+        <h1> Datos del usuario (1)</h1>
+        <form action="procesar.php" method="get">
+			<label>Usuario: <input type="text" name="usuario"></label>
+			<label>Clave: <input type="password" name="password"></label>
+			<input type="submit" name="enviar" value="Enviar">
+        </form>
+
+
+        <!- Formulario 2. Campos obligatorios. sin novalidate ->
+
+        <h1> Datos del usuario (2.1)</h1>
+        <form action="procesar.php" method="get">
+			<label>Usuario: <input type="text" name="usuario" required></label>
+			<label>Clave: <input type="password" name="password"></label>
+			<input type="submit" name="enviar" value="Enviar">
+        </form>
+
+
+        <!- Formulario 2. Campos obligatorios. con novalidate ->
+
+        <h1> Datos del usuario (2.2)</h1>
+        <form action="procesar.php" method="get" novalidate>
+			<label>Usuario: <input type="text" name="usuario" required></label>
+			<label>Clave: <input type="password" name="password"></label>
+			<input type="submit" name="enviar" value="Enviar">
+        </form>
+
+
+        <!- Formulario 3. Información al usuario ->
+
+        <h1> Datos del usuario (3)</h1>
+        <form action="procesar.php" method="get">
+			<label>Usuario: <input type="text" name="usuario" placeholder="Campo obligatorio" required></label>
+			<label>Clave: <input type="password" name="password" placeholder="Introduzca la contraseña"></label>
+			<input type="submit" name="enviar" value="Enviar">
+        </form>
+
+
+        <!- Formulario 4. Valor por defecto ->
+
+        <h1> Datos del usuario (4)</h1>
+        <form action="procesar.php" method="get">
+			<label>Usuario: <input type="text" name="usuario" placeholder="Campo obligatorio" required></label>
+			<label>Clave: <input type="password" name="password" placeholder="Introduzca la contraseña"></label>
+            <label>Nacionalidad: <input type="text" name="nacionalidad" value="España"></label>
+			<input type="submit" name="enviar" value="Enviar">
+        </form>
+
+
+        <!- Formulario 5. Campos especiales de texto ->
+
+        <h1> Datos del usuario (5)</h1>
+        <form action="procesar.php" method="get">
+			<label>Usuario: <input type="text" name="usuario" placeholder="Campo obligatorio" required></label>
+			<label>Clave: <input type="password" name="password" placeholder="Introduzca la contraseña"></label>
+            <label>Nacionalidad: <input type="text" name="nacionalidad" value="España"></label>
+			<label>Email: <input type="email” name="email"> </label>
+            <input type="submit" name="enviar" value="Enviar">
+        </form>
+
+
+        <!- Formulario 6. Formato ->
+
+        <h1> Datos del usuario (6)</h1>
+        <form action="procesar.php" method="get">  
+            <fieldset>
+                <legend> Datos personales</legend>
+                <p><label>Usuario: <input type="text" name="usuario" placeholder="Campo obligatorio" required></label></p>
+                <p><label>Clave: <input type="password" name="password" placeholder="Introduzca la contraseña"></label></p>
+                <p><label>Nacionalidad: <input type="text" name="nacionalidad" value="España"></label></p>
+            </fieldset>
+			<p><label>Email: <input type="email" name="email"> </label></p>
+            <p><input type="submit" name="enviar" value="Enviar"></p>
+        </form>
+
+
+        <!- Formulario 7. Menú desplegable ->
+
+        <h1> Datos del usuario (7)</h1>
+        <form action="procesar.php" method="get">
+			<p><label>Usuario: <input type="text" name="usuario" placeholder="Campo obligatorio" required></label></p>
+			<p><label>Clave: <input type="password" name="password" placeholder="Introduzca la contraseña"></label></p>
+            <p><label>Nacionalidad: <input type="text" name="nacionalidad" value="España"></label></p>
+			<p><label>Email: <input type=“email” name="email"> </label></p>
+            <p><label> Sexo: <select name="sexo">
+                <option> Masculino </option>
+                <option> Femenino </option>
+                <option> No binario </option>
+                <option selected> No deseo responder </option>
+                </select></label></p>
+            <p><label> Datos: <select name="datos">
+                <option value="TOTAL"> Acepta el almacenamiento de mis datos y el envío a terceros </option>
+                <option value="PARCIAL"> Acepta el almacenamiento de mis datos pero no el envío a terceros </option>
+                <option value="NINGUNO"> No acepta el almacenamiento ni el envío de datos a terceros </option>
+                </select></label></p>
+            <p><input type="submit" name="enviar" value="Enviar"></p>
+        </form>
+
+
+        <!- Formulario 8. Opciones excluyentes ->
+
+        <h1> Datos del usuario (8)</h1>
+        <form action="procesar.php" method="get">
+			<p><label>Usuario: <input type="text" name="usuario" placeholder="Campo obligatorio" required></label></p>
+			<p><label>Clave: <input type="password" name="password" placeholder="Introduzca la contraseña"></label></p>
+            <p><label>Nacionalidad: <input type="text" name="nacionalidad" value="España"></label></p>
+			<p><label>Email: <input type=“email” name="email"> </label></p>
+            <p><label> Sexo: <select name="sexo">
+                <option> Masculino </option>
+                <option> Femenino </option>
+                <option> No binario </option>
+                <option selected> No deseo responder </option>
+                </select></label></p>
+            <p><label> Datos: <select name="datos">
+                <option value="TOTAL"> Acepta el almacenamiento de mis datos y el envío a terceros </option>
+                <option value="PARCIAL"> Acepta el almacenamiento de mis datos pero no el envío a terceros </option>
+                <option value="NINGUNO"> No acepta el almacenamiento ni el envío de datos a terceros </option>
+                </select></label></p>
+            <p> Idioma para comunicaciones: <!- Si no se marca ninguna opcion, no se envía nada ->
+                <label><input type="radio" name="idioma" value="Español"> Español</label>
+                <label><input type="radio" name="idioma" value="Inglés" checked> Inglés</label>
+                <label><input type="radio" name="idioma" value="Francés"> Francés</label>
+                </p>
+            <p><input type="submit" name="enviar" value="Enviar"></p>
+        </form>
+
+
+        <!- Formulario 9. Opciones múltiples ->
+
+        <h1> Datos del usuario (9)</h1>
+        <form action="procesar.php" method="get">
+			<p><label>Usuario: <input type="text" name="usuario" placeholder="Campo obligatorio" required></label></p>
+			<p><label>Clave: <input type="password" name="password" placeholder="Introduzca la contraseña"></label></p>
+            <p><label>Nacionalidad: <input type="text" name="nacionalidad" value="España"></label></p>
+			<p><label>Email: <input type=“email” name="email"> </label></p>
+            <p><label> Sexo: <select name="sexo">
+                <option> Masculino </option>
+                <option> Femenino </option>
+                <option> No binario </option>
+                <option selected> No deseo responder </option>
+                </select></label></p>
+            <p><label> Datos: <select name="datos">
+                <option value="TOTAL"> Acepta el almacenamiento de mis datos y el envío a terceros </option>
+                <option value="PARCIAL"> Acepta el almacenamiento de mis datos pero no el envío a terceros </option>
+                <option value="NINGUNO"> No acepta el almacenamiento ni el envío de datos a terceros </option>
+                </select></label></p>
+            <p> Idioma para comunicaciones: <!- Si no se marca ninguna opcion, no se envía nada ->
+                <label><input type="radio" name="idioma" value="Español"> Español</label>
+                <label><input type="radio" name="idioma" value="Inglés" checked> Inglés</label>
+                <label><input type="radio" name="idioma" value="Francés"> Francés</label>
+                </p>
+            <p> Aficiones: <!- Si no se marca ninguna opcion, no se envía nada. Si se marca más de una, pero tienen el mismo "name", solo se guarda la última ->
+                <label> <input type="checkbox" name="aficiones[]" value="Musica"> La música</label>
+                <label> <input type="checkbox" name="aficiones[]" value="Libros"> Leer libros</label>
+                <label> <input type="checkbox" name="aficiones[]" value="Cine"> El cine</label>
+                <label> <input type="checkbox" name="aficiones[]" value="Deporte"> El deporte</label>
+            </p>
+            <p><input type="submit" name="enviar" value="Enviar"></p>
+        </form>
+
+
+        <!- Formulario 10. Soporte de navegadores a campos especiales ->
+
+        <h1> Datos del usuario (10)</h1>
+        <form action="procesar.php" method="get">
+			<p><label>Usuario: <input type="text" name="usuario" placeholder="Campo obligatorio" required></label></p>
+			<p><label>Clave: <input type="password" name="password" placeholder="Introduzca la contraseña"></label></p>
+            <p><label>Nacionalidad: <input type="text" name="nacionalidad" value="España"></label></p>
+			<p><label>Email: <input type=“email” name="email"> </label></p>
+            <p><label> Sexo: <select name="sexo">
+                <option> Masculino </option>
+                <option> Femenino </option>
+                <option> No binario </option>
+                <option selected> No deseo responder </option>
+                </select></label></p>
+            <p><label> Datos: <select name="datos">
+                <option value="TOTAL"> Acepta el almacenamiento de mis datos y el envío a terceros </option>
+                <option value="PARCIAL"> Acepta el almacenamiento de mis datos pero no el envío a terceros </option>
+                <option value="NINGUNO"> No acepta el almacenamiento ni el envío de datos a terceros </option>
+                </select></label></p>
+            <p> Idioma para comunicaciones: <!- Si no se marca ninguna opcion, no se envía nada ->
+                <label><input type="radio" name="idioma" value="Español"> Español</label>
+                <label><input type="radio" name="idioma" value="Inglés" checked> Inglés</label>
+                <label><input type="radio" name="idioma" value="Francés"> Francés</label>
+                </p>
+            <p> Aficiones: <!- Si no se marca ninguna opcion, no se envía nada. Si se marca más de una, pero tienen el mismo "name", solo se guarda la última ->
+                <label> <input type="checkbox" name="aficiones[]" value="Musica"> La música</label>
+                <label> <input type="checkbox" name="aficiones[]" value="Libros"> Leer libros</label>
+                <label> <input type="checkbox" name="aficiones[]" value="Cine"> El cine</label>
+                <label> <input type="checkbox" name="aficiones[]" value="Deporte"> El deporte</label>
+            </p>
+            <p><label> Fecha de nacimiento <input type="date" name="fecha nacimiento"></label></p>
+            <p><label> Semana de semana santa <input type="week" name="semana santa"></label></p>
+            <!- En Firefox solo se puede ver "bien" la fecha, la semana no la soporta ->
+            <p><input type="submit" name="enviar" value="Enviar"></p>
+        </form>
+
+
+        <!- Formulario 11. Campos ocultos ->
+
+        <h1> Datos del usuario (11)</h1>
+        <form action="procesar.php" method="get">
+			<p><label>Usuario: <input type="text" name="usuario" placeholder="Campo obligatorio" required></label></p>
+			<p><label>Clave: <input type="password" name="password" placeholder="Introduzca la contraseña"></label></p>
+            <p><label>Nacionalidad: <input type="text" name="nacionalidad" value="España"></label></p>
+			<p><label>Email: <input type=“email” name="email"> </label></p>
+            <p><label> Sexo: <select name="sexo">
+                <option> Masculino </option>
+                <option> Femenino </option>
+                <option> No binario </option>
+                <option selected> No deseo responder </option>
+                </select></label></p>
+            <p><label> Datos: <select name="datos">
+                <option value="TOTAL"> Acepta el almacenamiento de mis datos y el envío a terceros </option>
+                <option value="PARCIAL"> Acepta el almacenamiento de mis datos pero no el envío a terceros </option>
+                <option value="NINGUNO"> No acepta el almacenamiento ni el envío de datos a terceros </option>
+                </select></label></p>
+            <p> Idioma para comunicaciones: <!- Si no se marca ninguna opcion, no se envía nada ->
+                <label><input type="radio" name="idioma" value="Español"> Español</label>
+                <label><input type="radio" name="idioma" value="Inglés" checked> Inglés</label>
+                <label><input type="radio" name="idioma" value="Francés"> Francés</label>
+                </p>
+            <p> Aficiones: <!- Si no se marca ninguna opcion, no se envía nada. Si se marca más de una, pero tienen el mismo "name", solo se guarda la última ->
+                <label> <input type="checkbox" name="aficiones[]" value="Musica"> La música</label>
+                <label> <input type="checkbox" name="aficiones[]" value="Libros"> Leer libros</label>
+                <label> <input type="checkbox" name="aficiones[]" value="Cine"> El cine</label>
+                <label> <input type="checkbox" name="aficiones[]" value="Deporte"> El deporte</label>
+            </p>
+            <p><label> Fecha de nacimiento <input type="date" name="fecha nacimiento"></label></p>
+            <p><label> Semana de semana santa <input type="week" name="semana santa"></label></p>
+            <!- En Firefox solo se puede ver "bien" la fecha, la semana no la soporta ->
+            <p><input type="hidden" name="version" value="1.0"></p>
+            <p><input type="submit" name="enviar" value="Enviar"></p>
+        </form>
+
+
+        <!- Formulario 12. Campos con entrada deshabilitada ->
+
+        <h1> Datos del usuario (12)</h1>
+        <form action="procesar.php" method="get">
+			<p><label>Usuario: <input type="text" name="usuario" placeholder="Campo obligatorio" value="pepemartin" readonly></label></p>
+			<p><label>Clave: <input type="password" name="password" placeholder="Introduzca la contraseña" value="miclave" disabled></label></p>
+            <p><label>Nacionalidad: <input type="text" name="nacionalidad" value="España" readonly></label></p>
+			<p><label>Email: <input type=“email” name="email" value="pepemartin@miservidor.com" readonly></label></p>
+            
+            <p><label> Sexo: <select name="sexo">
+                <option > Masculino </option>
+                <option disabled> Femenino </option>
+                <option disabled> No binario </option>
+                <option disabled> No deseo responder </option>
+                </select></label></p>
+
+            <p><label> Datos: <select name="datos">
+                <option value="TOTAL"> Acepta el almacenamiento de mis datos y el envío a terceros </option>
+                <option value="PARCIAL" disabled> Acepta el almacenamiento de mis datos pero no el envío a terceros </option>
+                <option value="NINGUNO" disabled> No acepta el almacenamiento ni el envío de datos a terceros </option>
+                </select></label></p> 
+            <!- Ponemos las opciones que no son TOTAL como deshabilitadas para que no puedan ser seleccionadas ->
+
+            <p> Idioma para comunicaciones: <!- Si no se marca ninguna opcion, no se envía nada ->
+                <label><input type="radio" name="idioma" value="Español" disabled> Español</label>
+                <label><input type="radio" name="idioma" value="Inglés" checked> Inglés</label>
+                <label><input type="radio" name="idioma" value="Francés" disabled> Francés</label>
+            </p>
+            <!- Ponemos las opciones que no son inglés como deshabilitadas para que no puedan ser seleccionadas ->
+
+            <p> Aficiones: <!- Si no se marca ninguna opcion, no se envía nada. Si se marca más de una, pero tienen el mismo "name", solo se guarda la última ->
+                <label> <input type="checkbox" name="aficiones[]" value="Musica" disabled> La música</label>
+                <label> <input type="checkbox" name="aficiones[]" value="Libros" checked disabled> Leer libros</label>
+                <label> <input type="checkbox" name="aficiones[]" value="Cine" disabled> El cine</label>
+                <label> <input type="checkbox" name="aficiones[]" value="Deporte" disabled> El deporte</label>
+            </p>
+            <!- Además de poner las demás como deshabilitadas, también ponemos libros para que no pueda desmarcarse ->
+
+            <p><label> Fecha de nacimiento <input type="date" name="fecha nacimiento" value="2000-01-01" readonly></label></p>
+            <p><label> Semana de semana santa <input type="week" name="semana santa" value="Semana 18" readonly></label></p>
+            <!- En Firefox solo se puede ver "bien" la fecha, la semana no la soporta ->
+
+            <p><input type="hidden" name="version" value="1.0"></p>
+            <p><input type="submit" name="enviar" value="Enviar"></p>
+
+            <!- Tiene sentido utilizar "disabled" para aquellos atributos que no quieres que sean marcados. Por ejemplo, si tienes un cuestionario que te pregunta
+            por tu comunidad autónoma, y después un listado de provincias. No tiene sentido que puedas marcar provincias que no sean de tu comunidad autónoma. ->
+        </form>
+
+
+        <!- Formulario 13. Envío de ficheros ->
+
+        <h1> Datos del usuario (13)</h1>
+        <form action="procesar2.php" method="get">
+			<p><label>Usuario: <input type="text" name="usuario" placeholder="Campo obligatorio" value="pepemartin" readonly></label></p>
+			<p><label>Clave: <input type="password" name="password" placeholder="Introduzca la contraseña" value="miclave" disabled></label></p>
+            <p><label>Nacionalidad: <input type="text" name="nacionalidad" value="España" readonly></label></p>
+			<p><label>Email: <input type=“email” name="email" value="pepemartin@miservidor.com" readonly></label></p>
+            
+            <p><label> Sexo: <select name="sexo">
+                <option > Masculino </option>
+                <option disabled> Femenino </option>
+                <option disabled> No binario </option>
+                <option disabled> No deseo responder </option>
+                </select></label></p>
+
+            <p><label> Datos: <select name="datos">
+                <option value="TOTAL"> Acepta el almacenamiento de mis datos y el envío a terceros </option>
+                <option value="PARCIAL" disabled> Acepta el almacenamiento de mis datos pero no el envío a terceros </option>
+                <option value="NINGUNO" disabled> No acepta el almacenamiento ni el envío de datos a terceros </option>
+                </select></label></p> 
+            <!- Ponemos las opciones que no son TOTAL como deshabilitadas para que no puedan ser seleccionadas ->
+
+            <p> Idioma para comunicaciones: <!- Si no se marca ninguna opcion, no se envía nada ->
+                <label><input type="radio" name="idioma" value="Español" disabled> Español</label>
+                <label><input type="radio" name="idioma" value="Inglés" checked> Inglés</label>
+                <label><input type="radio" name="idioma" value="Francés" disabled> Francés</label>
+            </p>
+            <!- Ponemos las opciones que no son inglés como deshabilitadas para que no puedan ser seleccionadas ->
+
+            <p> Aficiones: <!- Si no se marca ninguna opcion, no se envía nada. Si se marca más de una, pero tienen el mismo "name", solo se guarda la última ->
+                <label> <input type="checkbox" name="aficiones[]" value="Musica" disabled> La música</label>
+                <label> <input type="checkbox" name="aficiones[]" value="Libros" checked disabled> Leer libros</label>
+                <label> <input type="checkbox" name="aficiones[]" value="Cine" disabled> El cine</label>
+                <label> <input type="checkbox" name="aficiones[]" value="Deporte" disabled> El deporte</label>
+            </p>
+            <!- Además de poner las demás como deshabilitadas, también ponemos libros para que no pueda desmarcarse ->
+
+            <p><label> Fecha de nacimiento <input type="date" name="fecha nacimiento" value="2000-01-01" readonly></label></p>
+            <p><label> Semana de semana santa <input type="week" name="semana santa" value="Semana 18" readonly></label></p>
+            <!- En Firefox solo se puede ver "bien" la fecha, la semana no la soporta ->
+
+            <p><input type="hidden" name="version" value="1.0"></p>
+            <p><label>Fotografía: <input type="file" name="imagen"></label></p>
+            <p><input type="submit" name="enviar" value="Enviar"></p>
+
+            <!- Tiene sentido utilizar "disabled" para aquellos atributos que no quieres que sean marcados. Por ejemplo, si tienes un cuestionario que te pregunta
+            por tu comunidad autónoma, y después un listado de provincias. No tiene sentido que puedas marcar provincias que no sean de tu comunidad autónoma. ->
+        </form>
+    </body>
+</html>
